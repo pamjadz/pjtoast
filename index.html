@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fa_IR" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+	<title>Your Email Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="scripts.js"></script>
+</head>
+<body>
+
+	<script>
+		function showToast(message, type = 'success'){
+			let template = 'text-white bg-foreground';
+			if( 'success' == type ){
+				template = 'text-white bg-green-500';
+			} else if( 'error' == type ){
+				template = 'text-white bg-red-500';
+			}
+			new Toast(message, {
+				position: 'bottom-left',
+				showProgress: true,
+				dismissible: true,
+				template: `<div class="p-2 rounded-md ${template}">%content%</div>`,
+			});
+		}
+
+		showToast('Hello! This is a simple toast 👋');
+	</script>
+
+</body>
+</html>
